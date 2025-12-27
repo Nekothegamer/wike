@@ -1,4 +1,5 @@
 %undefine _debugsource_packages
+%global appid com.github.hugolabe.Wike
 %define oname Wike
 
 Name:		wike
@@ -15,7 +16,9 @@ BuildRequires:  pkgconfig(gtk4)
 BuildRequires: 	libadwaita-common
 BuildRequires: 	pkgconfig(libadwaita-1)  
 BuildRequires:  gettext
+BuildRequires:	desktop-file-utils
 BuildSystem:	meson
+
 
 %description
 Wike is a Wikipedia reader for the GNOME Desktop. 
@@ -38,11 +41,14 @@ distraction-free view of articles.
 %meson_install
 %find_lang %{name}
 
+%check
+desktop-file-validate %{buildroot}/%{_datadir}/applications/%{appid}.desktop
+
 %files -f %{name}.lang
 %{_bindir}/wike
 %{_datadir}/wike/
 %{_datadir}/glib-2.0/schemas/*
-%{_datadir}/applications/com.github.hugolabe.Wike.desktop
+%{_datadir}/applications/%{appid}.desktop
 %{_datadir}/icons/hicolor/*/apps/com.github.hugolabe.*
 %{_datadir}/gnome-shell/search-providers/com.github.hugolabe.Wike.SearchProvider.ini
 %{_datadir}/metainfo/*.xml
