@@ -13,12 +13,15 @@ Group:		Applications/Internet
  
 BuildRequires:	appstream
 BuildRequires:  pkgconfig(gtk4)
+BuildRequires:  pkgconfig(webkitgtk-6.0)
 BuildRequires: 	libadwaita-common
 BuildRequires: 	pkgconfig(libadwaita-1)  
 BuildRequires:  gettext
 BuildRequires:	desktop-file-utils
 BuildSystem:	meson
 
+Requires: typelib(WebKit)
+Requires: webkit
 
 %description
 Wike is a Wikipedia reader for the GNOME Desktop. 
