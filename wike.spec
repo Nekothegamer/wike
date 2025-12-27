@@ -37,11 +37,7 @@ distraction-free view of articles.
 * Desktop and mobile layouts
 * GNOME Shell search integration
 
-%install
-%meson_install
-%find_lang %{name}
-
-%check
+%install -a
 desktop-file-validate %{buildroot}/%{_datadir}/applications/%{appid}.desktop
 
 %files -f %{name}.lang
