@@ -13,7 +13,6 @@ Group:		Applications/Internet
  
 BuildRequires:	appstream
 BuildRequires:  pkgconfig(gtk4)
-BuildRequires:  pkgconfig(webkitgtk-6.0)
 BuildRequires: 	libadwaita-common
 BuildRequires: 	pkgconfig(libadwaita-1)  
 BuildRequires:  gettext
